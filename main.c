@@ -8,6 +8,7 @@
  * main - execute basic UNIX commands
  * @argc: argument count
  * @argv: argument vector
+ * @envp: environment of new program
  *
  * Return: 0
  */
