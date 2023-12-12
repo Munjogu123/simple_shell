@@ -20,7 +20,6 @@ int main(int ac, char **av)
 	delim = " \n";
 
 	(void)ac;
-	(void)av;
 
 	while (1)
 	{
