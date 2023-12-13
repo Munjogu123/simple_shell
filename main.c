@@ -22,8 +22,7 @@ int main(int argc, char **argv, char **env)
 
 	(void)env;
 
-	do 
-	{
+	do {
 		printf("$ ");
 		line = read_line();
 		args = split_line(line);
