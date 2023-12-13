@@ -13,7 +13,8 @@ int main(int ac, char **av)
 	size_t n = 0;
 	ssize_t val;
 	const char *delim;
-	int num_tokens, i;
+	int num_tokens, i, status;
+	pid_t child;
 
 	lineptr = NULL;
 	lineptr_copy = NULL;
@@ -57,7 +58,11 @@ int main(int ac, char **av)
 		}
 		av[i] = NULL;
 
-		execmd(av);
+		child = fork();
+		if (child == 0)
+			execmd(av);
+		else
+			wait(&status);
 	}
 	free(lineptr);
 	free(lineptr_copy);
